@@ -119,7 +119,7 @@ public class EntityAIDragonAttack extends EntityAIDragonBase {
             this.dragon.setAttackTarget((EntityLivingBase)null);
             dragon.setUsingBreathWeapon(false);
         }
-        this.dragon.getNavigator().clearPathEntity(); 
+        this.dragon.getNavigator().clearPath(); 
         dragon.setUsingBreathWeapon(false);
     }
 
@@ -190,7 +190,7 @@ public class EntityAIDragonAttack extends EntityAIDragonBase {
     protected void checkAndPerformAttack(EntityLivingBase target, double targetDistSq) {
         double attackReach = this.getAttackReachSqr(target);
         boolean shouldUseMelee = this.attackTick <= 0  || targetDistSq <= attackReach;
-        shouldUseRange = this.attackTick <= 0 || isWithinBreathRange(dragon.getDistanceToEntity(target)) 
+        shouldUseRange = this.attackTick <= 0 || isWithinBreathRange(dragon.getDistance(target)) 
         		 && dragon.getEntitySenses().canSee(target) && !(target instanceof EntityAnimal); 
 
         if (shouldUseMelee) { //|| targetDistSq >= attackReach && dragon.getEntitySenses().canSee(target)

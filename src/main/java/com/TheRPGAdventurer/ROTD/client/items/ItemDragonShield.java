@@ -26,7 +26,7 @@ public class ItemDragonShield extends ItemShield {
 	public ItemDragonShield(EnumItemBreedTypes type) {
 		this.setRegistryName(new ResourceLocation(DragonMounts.MODID, "dragon_shield_" + type.toString().toLowerCase()));
 //		this.material = material;
-		this.setUnlocalizedName("dragon_shield_" + type.toString().toLowerCase());
+		this.setTranslationKey("dragon_shield_" + type.toString().toLowerCase());
 		this.setMaxDamage(669);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(DragonMounts.TAB);

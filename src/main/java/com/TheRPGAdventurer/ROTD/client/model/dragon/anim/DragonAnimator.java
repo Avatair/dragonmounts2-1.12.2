@@ -276,7 +276,7 @@ public class DragonAnimator {
         groundTimer.set(groundVal);
 
         // update Hover transition
-        boolean HoverFlag = !onGround && (dragon.isCollided 
+        boolean HoverFlag = !onGround && (dragon.collided 
         		|| dragon.motionY > -0.1 || speedEnt < speedMax); 
         isHovering = HoverFlag;
         FlutterTimer.add(HoverFlag ? 0.1f : -0.1f);

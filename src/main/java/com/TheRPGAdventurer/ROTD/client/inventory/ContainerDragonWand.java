@@ -46,7 +46,7 @@ public class ContainerDragonWand extends Container {
 	}
 
 	public boolean canInteractWith(EntityPlayer playerIn) {
-		return this.dragonStats.isUsableByPlayer(playerIn) && this.dragon.isEntityAlive() && this.dragon.getDistanceToEntity(playerIn) < 8.0F;
+		return this.dragonStats.isUsableByPlayer(playerIn) && this.dragon.isEntityAlive() && this.dragon.getDistance(playerIn) < 8.0F;
 	}
 
 	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {

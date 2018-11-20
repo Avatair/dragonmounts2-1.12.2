@@ -44,7 +44,7 @@ public class EntityAIDragonPlayerControl extends EntityAIDragonBase implements P
 
     @Override
     public void startExecuting() {
-        dragon.getNavigator().clearPathEntity();
+        dragon.getNavigator().clearPath();
     }
     
     @Override
@@ -65,9 +65,9 @@ public class EntityAIDragonPlayerControl extends EntityAIDragonBase implements P
 
         // if we're breathing at a target, look at it
         if (dragon.isUsingBreathWeapon() && dragon.getBreed().canUseBreathWeapon() && dragon.getAnimator().getSpeed() > 0) {
-        	Vec3d dragonEyePos  = dragon.getPositionVector().addVector(0, dragon.getEyeHeight(), 0);
+        	Vec3d dragonEyePos  = dragon.getPositionVector().add(0, dragon.getEyeHeight(), 0);
             Vec3d lookDirection = rider.getLook(1.0F);
-            Vec3d endOfLook = dragonEyePos.addVector(lookDirection.x, lookDirection.y, lookDirection.z);
+            Vec3d endOfLook = dragonEyePos.add(lookDirection.x, lookDirection.y, lookDirection.z);
             dragon.getLookHelper().setLookPosition(endOfLook.x, endOfLook.y, endOfLook.z, 
             		dragon.getHeadYawSpeed(), dragon.getHeadPitchSpeed());
         }
@@ -92,9 +92,9 @@ public class EntityAIDragonPlayerControl extends EntityAIDragonBase implements P
                 wp = wp.add(front.rotateYaw(MathX.PI_F * -0.5f));
             }
             if( isMovingUpwards )
-            	wp = wp.addVector(0, 1, 0);
+            	wp = wp.add(0, 1, 0);
             if( isMovingDownwards )
-            	wp = wp.addVector(0, -1, 0);
+            	wp = wp.add(0, -1, 0);
             wp = wp.normalize();
             
             x += wp.x * 10;

@@ -14,7 +14,7 @@ public class CreativeTab extends CreativeTabs {
 	}
 
 	@Override
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
 		return new ItemStack(Blocks.DRAGON_EGG);
 	}
 

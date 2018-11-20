@@ -861,7 +861,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable, 
 	public void tamedFor(EntityPlayer player, boolean successful) {
 		if (successful) {
 			setTamed(true);
-			navigator.clearPathEntity(); // replacement for setPathToEntity(null);
+			navigator.clearPath(); // replacement for setPathToEntity(null);
 			setAttackTarget(null);
 			setOwnerId(player.getUniqueID());
 			playTameEffect(true);
@@ -1164,7 +1164,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable, 
 	
 	@Override
 	public void move(MoverType type, double x, double y, double z) {
-		this.onGround2 = this.isCollidedVertically && y > -20.0D;
+		this.onGround2 = this.collidedVertically && y > -20.0D;
 		super.move(type, x, y, z);
 	}
 	
@@ -1599,7 +1599,7 @@ public class EntityTameableDragon extends EntityTameable implements IShearable, 
 				double d0 = Double.MAX_VALUE;
 
 				for (EntityEnderCrystal entityendercrystal1 : list) {
-					double d1 = entityendercrystal1.getDistanceSqToEntity(this);
+					double d1 = entityendercrystal1.getDistanceSq(this);
 
 					if (d1 < d0) {
 						d0 = d1;

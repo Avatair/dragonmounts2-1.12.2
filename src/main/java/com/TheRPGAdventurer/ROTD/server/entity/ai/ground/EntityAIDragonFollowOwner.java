@@ -70,7 +70,7 @@ public class EntityAIDragonFollowOwner extends EntityAIDragonBase {
             return false;
         }
 
-        if (dragon.getDistanceSqToEntity(ownerCurrent) < minDist * minDist) {
+        if (dragon.getDistanceSq(ownerCurrent) < minDist * minDist) {
             return false;
         }
 
@@ -119,7 +119,7 @@ public class EntityAIDragonFollowOwner extends EntityAIDragonBase {
     @Override
     public void resetTask() {
         owner = null;
-        nav.clearPathEntity();
+        nav.clearPath();
         PathNavigate pathNavigate = dragon.getNavigator();
         if (pathNavigate instanceof PathNavigateGround) {
             PathNavigateGround pathNavigateGround = (PathNavigateGround) pathNavigate;
@@ -157,7 +157,7 @@ public class EntityAIDragonFollowOwner extends EntityAIDragonBase {
         }
 
         // teleport only the owner is far enough
-        if (dragon.getDistanceSqToEntity(owner) < maxDist * maxDist) {
+        if (dragon.getDistanceSq(owner) < maxDist * maxDist) {
             return;
         }
     }
