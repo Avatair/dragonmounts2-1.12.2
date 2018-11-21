@@ -1,0 +1,18 @@
+{
+  "sub_module_id": "effect_call_dragon",
+  "reference_module_id": "effect_call_dragon",
+  "item": "minecraft:wheat",
+  "icon": "dragonmounts:textures/gui/worktable/icons/effect_call_dragon.png",
+  "primary_color": "381700",
+  "secondary_color": "8e0000",
+  "mana": {
+    "base": 300
+  },
+  "burnout": {
+    "base": 300
+  },
+  "cooldown": {
+    "base": 100
+  },
+  "duration": { "base": 5, "min": 5, "max": 30 }
+}
